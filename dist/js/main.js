@@ -22,31 +22,21 @@ function createTable(verb){
     source = source.replace("{{verbName}}", verb.name);
     source = source.replace("{{verbDesc}}", verb.translation);
 	
-	var tenses = "";
-	var yoConj = "";
-	var tuConj = "";
-	var elConj = "";
-	var nosConj = "";
-	var vosConj = "";
-	var ellosConj = "";
+	var tenseBlock = "";	
 	
-	verb.conjugation.forEach((tense, index) =>{
-		tenses += '<th>'+tense.tense+'</th>';
-		yoConj += '<td><input id="conj'+index+'_'+0+'" type=text" data-answer="'+tense.form[0]+'" onfocus="currentTextBox(\'conj'+index+'_'+0+'\');" /><span class="hidden">'+tense.form[0]+'</span></td>';
-		tuConj += '<td><input id="conj'+index+'_'+1+'" type=text" data-answer="'+tense.form[1]+'" onfocus="currentTextBox(\'conj'+index+'_'+1+'\');" /><span class="hidden">'+tense.form[1]+'</span></td>';
-		elConj += '<td><input id="conj'+index+'_'+2+'" type=text" data-answer="'+tense.form[2]+'" onfocus="currentTextBox(\'conj'+index+'_'+2+'\');" /><span class="hidden">'+tense.form[2]+'</span></td>';
-		nosConj += '<td><input id="conj'+index+'_'+3+'" type=text" data-answer="'+tense.form[3]+'" onfocus="currentTextBox(\'conj'+index+'_'+3+'\');" /><span class="hidden">'+tense.form[3]+'</span></td>';
-		vosConj += '<td><input id="conj'+index+'_'+4+'" type=text" data-answer="'+tense.form[4]+'" onfocus="currentTextBox(\'conj'+index+'_'+4+'\');" /><span class="hidden">'+tense.form[4]+'</span></td>';
-		ellosConj += '<td><input id="conj'+index+'_'+5+'" type=text" data-answer="'+tense.form[5]+'" onfocus="currentTextBox(\'conj'+index+'_'+5+'\');" /><span class="hidden">'+tense.form[5]+'</span></td>';
+	verb.conjugation.forEach((tense, index) =>{		
+		var tenseSource = document.getElementById("verbTableColumn").innerHTML;
+		tenseSource = tenseSource.replace("{{tense}}", tense.tense);
+		tenseSource = tenseSource.replace("{{yo}}", '<input id="conj'+index+'_'+0+'" type="text" data-answer="'+tense.form[0]+'" onfocus="currentTextBox(\'conj'+index+'_'+0+'\');" /><span class="hidden">'+tense.form[0]+'</span>');
+		tenseSource = tenseSource.replace("{{tu}}", '<input id="conj'+index+'_'+1+'" type="text" data-answer="'+tense.form[1]+'" onfocus="currentTextBox(\'conj'+index+'_'+1+'\');" /><span class="hidden">'+tense.form[1]+'</span>');
+		tenseSource = tenseSource.replace("{{el}}", '<input id="conj'+index+'_'+2+'" type="text" data-answer="'+tense.form[2]+'" onfocus="currentTextBox(\'conj'+index+'_'+2+'\');" /><span class="hidden">'+tense.form[2]+'</span>');
+		tenseSource = tenseSource.replace("{{nos}}", '<input id="conj'+index+'_'+3+'" type="text" data-answer="'+tense.form[3]+'" onfocus="currentTextBox(\'conj'+index+'_'+3+'\');" /><span class="hidden">'+tense.form[3]+'</span>');
+		tenseSource = tenseSource.replace("{{vos}}", '<input id="conj'+index+'_'+4+'" type="text" data-answer="'+tense.form[4]+'" onfocus="currentTextBox(\'conj'+index+'_'+4+'\');" /><span class="hidden">'+tense.form[4]+'</span>');
+		tenseSource = tenseSource.replace("{{ellos}}", '<input id="conj'+index+'_'+5+'" type="text" data-answer="'+tense.form[5]+'" onfocus="currentTextBox(\'conj'+index+'_'+5+'\');" /><span class="hidden">'+tense.form[5]+'</span>');
+		tenseBlock += tenseSource;		
 	});
 	
-    source = source.replace("{{tenses}}", tenses);
-    source = source.replace("{{yo-conj}}", yoConj);
-    source = source.replace("{{tu-conj}}", tuConj);
-    source = source.replace("{{el-conj}}", elConj);
-    source = source.replace("{{nos-conj}}", nosConj);
-    source = source.replace("{{vos-conj}}", vosConj);
-    source = source.replace("{{ellos-conj}}", ellosConj);
+    source = source.replace("{{tenseBlock}}", tenseBlock);
 	
 	var workingArea = document.getElementById("workingArea");
 	workingArea.innerHTML = source;

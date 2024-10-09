@@ -1,32 +1,77 @@
-#verbTable{
+.tableContainer{
+	display: flex;
+	flex-direction: column;
+}
+
+.tenseBlock{
+	border-right:1px solid black;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.header.term{
+	font-weight:bold;
+	text-align: center;
 	width: 100%;
-	border-collapse: collapse;
+}
+.cell.subject{
+	font-weight:bold;	
+	width:25%;
 }
 
-#verbTable th{
-	text-align: left;
+.cell{
+	padding: 2px;
 }
 
-#verbTable td{
-	border: 1px solid;
-	padding: 1px;
+.column.conj{
+	border-bottom:1px solid black;
+	display: flex;
+	flex-direction:row;
 }
 
-#verbTable td.correct input,
-#verbTable td.correct span
+.cell.answer{
+	flex-grow:1;
+}
+
+.cell.answer input[type=text]{
+	width: 50%;
+}
+
+@media screen and (min-width: 1025px){
+	.tableContainer{
+		flex-direction: row;
+		border: solid 2px red;
+	}
+	.verbTable{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.tenseBlock:not(:first-child){
+		.cell.subject{
+			display: none;
+		}
+	}
+	.cell.subject{	
+	width:33%;
+}
+}
+
+.cell.answer.correct input,
+.cell.answer.correct span
 {
 	color:green;
 }
 
-#verbTable td.wrong input,
-#verbTable td.wrong span{
+.cell.answer.wrong input,
+.cell.answer.wrong span{
 	color:red;
 }
 
-#verbTable td.correct::after {
+.cell.answer.correct::after {
   content: '✔️';
 }
-#verbTable td.wrong::after {
+.cell.answer.wrong::after {
   content: '❌';
 }
 
