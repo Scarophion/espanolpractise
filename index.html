@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verbs</title>
+		<script src="dist/js/data.js"></script>
+		<script src="dist/js/main.js" ></script>
+		<link rel="stylesheet" href="dist/css/main.css" />
+	</head>
+	<body>
+		<h1>Verbs</h1>
+		<div id="wrapper">
+			<div id="controls">
+				<div id="verbSelect">
+				</div>
+				<div>
+					<input type="submit" value="Check" onClick="check();" />
+					<input id="butReveal" type="submit" value="Reveal" onClick="reveal();" />
+					<input id="butHideAnswers" type="submit" value="Hide Answers" onClick="hideAnswers();" class="hidden" />
+					<input type="submit" value="Reset" onClick="reset();" />
+				</div>
+			</div>
+			<div id="workingArea">
+			</div>			
+			<div>
+				<input type="submit" value="á" onClick="insert('á');" />
+				<input type="submit" value="é" onClick="insert('é');" />
+				<input type="submit" value="í" onClick="insert('í');" />
+				<input type="submit" value="ó" onClick="insert('ó');" />
+				<input type="submit" value="ú" onClick="insert('ú');" />
+				<input type="submit" value="ñ" onClick="insert('ñ');" />
+			</div>
+		</div>
+		
+		<script id="verbTableTemplate" type="text/x-handlebars-template">
+			<div class="container">
+				<h2>{{verbName}} - {{verbDesc}}</h2>
+				<table id="verbTable">
+					<thead>
+						<tr>
+							<th></th>
+							{{tenses}}
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Yo</td>
+							{{yo-conj}}
+						</tr>
+						<tr>
+							<td>Tú</td>
+							{{tu-conj}}
+						</tr>
+						<tr>
+							<td>Él/Ella/Usted</td>
+							{{el-conj}}
+						</tr>
+						<tr>
+							<td>Nosotros</td>
+							{{nos-conj}}
+						</tr>
+						<tr>
+							<td>Vosotros</td>
+							{{vos-conj}}
+						</tr>
+						<tr>
+							<td>Ellos/Ellas</td>
+							{{ellos-conj}}
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</script>
+		<script type="text/javascript">
+			initialise();
+		</script>
+	</body>
+</html>

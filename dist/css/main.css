@@ -1,0 +1,35 @@
+#verbTable{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#verbTable th{
+	text-align: left;
+}
+
+#verbTable td{
+	border: 1px solid;
+	padding: 1px;
+}
+
+#verbTable td.correct input,
+#verbTable td.correct span
+{
+	color:green;
+}
+
+#verbTable td.wrong input,
+#verbTable td.wrong span{
+	color:red;
+}
+
+#verbTable td.correct::after {
+  content: '✔️';
+}
+#verbTable td.wrong::after {
+  content: '❌';
+}
+
+.hidden{
+	display:none;
+}
