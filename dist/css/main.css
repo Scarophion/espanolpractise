@@ -1,3 +1,7 @@
+body{
+	font-size: 2em;
+}
+
 .tableContainer{
 	display: flex;
 	flex-direction: column;
@@ -35,10 +39,18 @@
 }
 
 .cell.answer input[type=text]{
+	height: 2.5em;
 	width: 50%;
 }
 
+input[type=submit]{
+		font-size: 1em;
+}
+
 @media screen and (min-width: 1025px){
+	body{
+	font-size: 1.5em;
+	}
 	.tableContainer{
 		flex-direction: row;
 	}
@@ -53,6 +65,14 @@
 	}
 	.cell.subject{	
 	width:33%;
+	}
+	
+	.cell.answer input[type=text]{
+		height: 1.5em;
+	}
+	
+	input[type=submit]{
+		font-size: 0.8em;
 }
 }
 
