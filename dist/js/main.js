@@ -54,7 +54,7 @@ function check(){
 		if (answer.value === ""){
 			answer.parentElement.classList.remove("correct");
 			answer.parentElement.classList.remove("wrong");			
-		} else if (answer.value == answer.dataset.answer){
+		} else if (answer.value.localeCompare(answer.dataset.answer) == 0){
 			answer.parentElement.classList.add("correct");
 			answer.parentElement.classList.remove("wrong");
 		} else{
