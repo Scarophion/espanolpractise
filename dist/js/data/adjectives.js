@@ -58,8 +58,8 @@ const data =
 			"english": "very happy"
 		},
 		{
-			"espanol": "fun",
-			"english": "divertido"
+			"espanol": "divertido",
+			"english": "fun"
 		},
 		{
 			"espanol": "divertidísimo",

@@ -78,3 +78,9 @@ function swapLanguage() {
 function getAnswer() {
 	return spanishToEnglish.checked ? myAnswer.dataset.english : myAnswer.dataset.espanol;
 }
+
+function answerKeyDown(event) {
+	if (event.keyCode === 13) {
+		check();
+	}
+}
