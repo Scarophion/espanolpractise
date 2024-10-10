@@ -47,6 +47,7 @@ function next() {
 		myAnswer.dataset.espanol = thisWord.espanol;
 		myAnswer.parentElement.classList.remove("correct");
 		myAnswer.parentElement.classList.remove("wrong");
+		myAnswer.focus();
 
 		if (spanishToEnglish.checked) {
 			lblWord.innerHTML = thisWord.espanol;
