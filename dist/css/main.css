@@ -2,6 +2,10 @@ body {
     font-size: 2em;
 }
 
+#controls{
+    margin: 0.5em 0;
+}
+
 .tableContainer {
     display: flex;
     flex-direction: column;
@@ -39,12 +43,12 @@ body {
     flex-grow: 1;
 }
 
-    .cell.answer input[type=text] {
-        height: 2.5em;
-        width: 50%;
-        font-size: 1em;
-        text-transform: lowercase;
-    }
+.answer input[type=text] {
+    height: 2.5em;
+    width: 50%;
+    font-size: 1em;
+    text-transform: lowercase;
+}
 
 input[type=submit] {
     font-size: 1em;
@@ -88,26 +92,47 @@ input[type=submit] {
 
 }
 
-.cell.answer.correct input,
-.cell.answer.correct span {
+.answer.correct input,
+.answer.correct span {
     color: green;
 }
 
-.cell.answer.wrong input,
-.cell.answer.wrong span {
+.answer.wrong input,
+.answer.wrong span {
     color: red;
 }
 
-.cell.answer.correct::after {
+.answer.correct::after {
     content: '✔️';
     font-size: revert-layer;
 }
 
-.cell.answer.wrong::after {
+.answer.wrong::after {
     font-size: 0.8em;
     content: '❌';
 }
 
 .hidden {
     display: none;
+}
+
+body.words,
+#workingArea,
+#controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .answer{ 
+               display:flex;
+               input[type=text]{
+                                   text-align: center;
+                                width: 100%;
+                            }
+                             }
+}
+
+#characters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
