@@ -74,7 +74,7 @@ const data =
 			"english": "very boring"
 		},
 		{
-			"espanol": "hermosa",
+			"espanol": "hermoso",
 			"english": "beautiful"
 		},
 		{
