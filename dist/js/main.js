@@ -51,15 +51,18 @@ function check(){
     var table = document.getElementById("verbTable");
     var answers = table.querySelectorAll("input");
 	answers.forEach((answer) => {
-		if (answer.value === ""){
+		if (answer.value === "") {
 			answer.parentElement.classList.remove("correct");
-			answer.parentElement.classList.remove("wrong");			
-		} else if (answer.value.localeCompare(answer.dataset.answer) == 0){
-			answer.parentElement.classList.add("correct");
 			answer.parentElement.classList.remove("wrong");
-		} else{
-			answer.parentElement.classList.remove("correct");
-			answer.parentElement.classList.add("wrong");
+		} else {
+			answer.value = answer.value.toLowerCase(); // for mobile capitalisation
+			if (answer.value.localeCompare(answer.dataset.answer) == 0) {
+				answer.parentElement.classList.add("correct");
+				answer.parentElement.classList.remove("wrong");
+			} else {
+				answer.parentElement.classList.remove("correct");
+				answer.parentElement.classList.add("wrong");
+			}
 		}
 	});
 }
@@ -99,7 +102,7 @@ function hideAnswers(){
 	hideAnswersButton();
 }
 
-function insert(character){console.log(currentTxtBoxId);
+function insert(character){
 	var txtBox = document.getElementById(currentTxtBoxId);
 	txtBox.value +=character;
 	txtBox.focus();
@@ -110,6 +113,6 @@ function hideAnswersButton(){
 	document.getElementById("butHideAnswers").classList.add("hidden");
 }
 
-function currentTextBox(txtBoxId){console.log(txtBoxId);
+function currentTextBox(txtBoxId){
 	currentTxtBoxId = txtBoxId;
 }
