@@ -7,14 +7,14 @@ const data =
 		},
 		{
 			"espanol": "delgadísimo",
-			"english": "thin"
+			"english": "very thin"
 		},
 		{
 			"espanol": "gordo",
 			"english": "fat"
 		},
 		{
-			"espanol": "gordisimo",
+			"espanol": "gordísimo",
 			"english": "very fat"
 		},
 		{
@@ -150,7 +150,7 @@ const data =
 			"english": "acidic"
 		},
 		{
-			"espanol": "ácidísimo",
+			"espanol": "acidísimo",
 			"english": "very acidic"
 		},
 		{
