@@ -100,9 +100,11 @@ input[type=submit] {
 
 .cell.answer.correct::after {
     content: '✔️';
+    font-size: revert-layer;
 }
 
 .cell.answer.wrong::after {
+    font-size: 0.8em;
     content: '❌';
 }
 
