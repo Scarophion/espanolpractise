@@ -65,7 +65,7 @@ const data =
 				},
 				{
 					"tense": "presente",
-					"form": ["como", "comes", "come", "comemose", "coméis", "comen"]
+					"form": ["como", "comes", "come", "comemos", "coméis", "comen"]
 				},
 				{
 					"tense": "futuro",

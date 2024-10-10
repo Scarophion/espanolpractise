@@ -1,99 +1,111 @@
-body{
-	font-size: 2em;
+body {
+    font-size: 2em;
 }
 
-.tableContainer{
-	display: flex;
-	flex-direction: column;
+.tableContainer {
+    display: flex;
+    flex-direction: column;
 }
 
-.tenseBlock{
-	border-right:1px solid black;
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
+.tenseBlock {
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.header.term{
-	font-weight:bold;
-	text-align: center;
-	width: 100%;
-}
-.cell.subject{
-	font-weight:bold;	
-	width:25%;
+.header.term {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
 }
 
-.cell{
-	padding: 2px;
+.cell.subject {
+    font-weight: bold;
+    width: 25%;
 }
 
-.column.conj{
-	border-bottom:1px solid black;
-	display: flex;
-	flex-direction:row;
+.cell {
+    padding: 2px;
 }
 
-.cell.answer{
-	flex-grow:1;
+.column.conj {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
-.cell.answer input[type=text]{
-	height: 2.5em;
-	width: 50%;
+.cell.answer {
+    flex-grow: 1;
 }
 
-input[type=submit]{
-		font-size: 1em;
+    .cell.answer input[type=text] {
+        height: 2.5em;
+        width: 50%;
+        font-size: 1em;
+        text-transform: lowercase;
+    }
+
+input[type=submit] {
+    font-size: 1em;
 }
 
-@media screen and (min-width: 1025px){
-	body{
-	font-size: 1.5em;
-	}
-	.tableContainer{
-		flex-direction: row;
-	}
-	.verbTable{
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-	.tenseBlock:not(:first-child){
-		.cell.subject{
-			display: none;
-		}
-	}
-	.cell.subject{	
-	width:33%;
-	}
-	
-	.cell.answer input[type=text]{
-		height: 1.5em;
-	}
-	
-	input[type=submit]{
-		font-size: 0.8em;
+@media screen and (min-width: 1025px) {
+    body {
+        font-size: 1.5em;
+    }
+
+    .tableContainer {
+        flex-direction: row;
+    }
+
+    .verbTable {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tenseBlock:not(:first-child) {
+        .cell.subject
+
+{
+    display: none;
 }
+
+}
+
+.cell.subject {
+    width: 33%;
+}
+
+.cell.answer input[type=text] {
+    font-size: revert-layer;
+    height: 1.5em;
+}
+
+input[type=submit] {
+    font-size: 0.8em;
+}
+
 }
 
 .cell.answer.correct input,
-.cell.answer.correct span
-{
-	color:green;
+.cell.answer.correct span {
+    color: green;
 }
 
 .cell.answer.wrong input,
-.cell.answer.wrong span{
-	color:red;
+.cell.answer.wrong span {
+    color: red;
 }
 
 .cell.answer.correct::after {
-  content: '✔️';
-}
-.cell.answer.wrong::after {
-  content: '❌';
+    content: '✔️';
 }
 
-.hidden{
-	display:none;
+.cell.answer.wrong::after {
+    content: '❌';
+}
+
+.hidden {
+    display: none;
 }
