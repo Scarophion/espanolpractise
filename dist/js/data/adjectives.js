@@ -70,7 +70,7 @@ const data =
 			"english": "boring"
 		},
 		{
-			"espanol": "abburidísimo",
+			"espanol": "aburridísimo",
 			"english": "very boring"
 		},
 		{
