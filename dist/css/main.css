@@ -37,6 +37,7 @@ body {
     border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
+    min-height: 1.4em;
 }
 
 .cell.answer {
@@ -78,7 +79,7 @@ input[type=submit] {
 }
 
 .cell.subject {
-    width: 33%;
+    width: 50%;
 }
 
 .cell.answer input[type=text] {

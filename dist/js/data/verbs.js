@@ -51,7 +51,7 @@ const data =
 				},
 				{
 					"tense": "futuro",
-					"form": ["hablaré", "hablarás", "hablara", "hablaremos", "hablaréis", "hablarán"]
+					"form": ["hablaré", "hablarás", "hablará", "hablaremos", "hablaréis", "hablarán"]
 				}
 			]
 		},		
@@ -61,7 +61,7 @@ const data =
 			"conjugation":[
 				{
 					"tense": "pretérito",
-					"form": ["comí", "comiste", "comió", "comimos", "comisteis", "comimeron"]
+					"form": ["comí", "comiste", "comió", "comimos", "comisteis", "comieron"]
 				},
 				{
 					"tense": "presente",
@@ -69,7 +69,7 @@ const data =
 				},
 				{
 					"tense": "futuro",
-					"form": ["comeré", "comerás", "comerá", "comeremos", "comeréis", "comeran"]
+					"form": ["comeré", "comerás", "comerá", "comeremos", "comeréis", "comerán"]
 				}
 			]
 		},		
@@ -83,7 +83,7 @@ const data =
 				},
 				{
 					"tense": "presente",
-					"form": ["vivo", "vives", "vives", "vivimos", "vivis", "viven"]
+					"form": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"]
 				},
 				{
 					"tense": "futuro",
