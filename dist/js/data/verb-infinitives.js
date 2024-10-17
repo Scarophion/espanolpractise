@@ -19,7 +19,7 @@ const data =
 		},
 		{
 			"espanol": "poder",
-			"english": "to to be able to"
+			"english": "to be able to"
 		},
 		{
 			"espanol": "decir",
