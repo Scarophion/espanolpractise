@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Verb infinitives</title>
-    <script src="dist/js/data/verb-infinitives.js?v=1.1"></script>
+    <script src="dist/js/data/verb-infinitives.js?v=2.0"></script>
     <script src="dist/js/main.js?v=1.0"></script>
-    <script src="dist/js/words.js?v=1.4"></script>
+    <script src="dist/js/words.js?v=2.0"></script>
     <link rel="stylesheet" href="dist/css/main.css?v=1.4" />
     <link rel="stylesheet" href="dist/css/slider.css?v=1.0" />
 </head>
@@ -26,6 +26,8 @@
     </div>
     <div id="content">
         <h1>Verb infinitives</h1>
+        <div id="wordSelect" style="display:none;">
+        </div>
         <div id="wrapper">
             <div id="workingArea">
                 <h2 id="lblWord"></h2>
@@ -56,7 +58,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        initialiseWords(data.regVerbs);
+        initialiseWords(data);
     </script>
 </body>
 </html>

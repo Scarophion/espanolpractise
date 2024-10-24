@@ -82,6 +82,7 @@ body {
 }
 
 .cell.subject {
+    flex-shrink: 0;
     font-weight: bold;
     width: 25%;
 }

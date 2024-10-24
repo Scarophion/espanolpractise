@@ -3,13 +3,46 @@ var myAnswer;
 var spanishToEnglish;
 var lblWord;
 
-function initialiseWords(someWords) {
-	words = someWords;
+function initialiseWords(data) {
+	createCheckBoxes(data);
+	setWords(data);
 	myAnswer = document.getElementById("txtAnswer");
 	spanishToEnglish = document.getElementById("chkSpanish");
 	lblWord = document.getElementById("lblWord");
 	next();
 };
+
+function createCheckBoxes(data) {
+	var chkDiv = document.getElementById("wordSelect");
+	data.forEach((collection) => {
+		var chkBox = '<input type="checkbox" id="chk' + collection.name + '" value="' + collection.name + '" checked onclick="setWords(data);" /><label for="chk' + collection.name + '">' + collection.name + '</span>';
+		chkDiv.innerHTML += chkBox;
+	});
+};
+
+function activeCollections() {
+	var chkDiv = document.getElementById("wordSelect");
+	var checkBoxes = chkDiv.querySelectorAll("input");
+	var collections = [];
+	checkBoxes.forEach((checkBox) => {
+		if (checkBox.checked) {
+			collections.push(checkBox.value);
+		}
+	});
+	return collections;
+}
+
+function setWords(data) {
+	var collectionNames = activeCollections();
+	var selectedWords = [];
+	data.forEach((collection) => {
+		if (collectionNames.includes(collection.name)) {
+			selectedWords.push(...collection.words);
+		}
+	});
+
+	words = selectedWords;
+}
 
 function check() {
 	if (myAnswer.value === "") {
