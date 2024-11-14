@@ -90,6 +90,20 @@ const data =
 					"form": ["viviré", "vivirás", "vivirá", "viviremos", "viviréis", "vivirán"]
 				}
 			]
+		},
+		{
+			"name": "haber",
+			"translation": "to have (show the existence of people or things)",
+			"conjugation": [
+				{
+					"tense": "presente",
+					"form": ["he", "has", "ha", "hemos", "habéis", "han"]
+				},
+				{
+					"tense": "futuro",
+					"form": ["habré", "habrás", "habrá", "habremos", "habéis", "habrán"]
+				}
+			]
 		}
 	]
 }
