@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Adjectives</title>
-    <script src="dist/js/data/adjectives.js?v=2.1"></script>
+    <title>Sentences</title>
+    <script src="dist/js/data/sentences.js?v=2.1"></script>
     <script src="dist/js/main.js?v=1.0"></script>
-    <script src="dist/js/words.js?v=2.1"></script>
+    <script src="dist/js/sentences.js?v=2.1"></script>
     <link rel="stylesheet" href="dist/css/main.css?v=1.4" />
     <link rel="stylesheet" href="dist/css/slider.css?v=1.0" />
 </head>
@@ -26,22 +26,22 @@
         </div>
     </div>
     <div id="content">
-        <h1>Adjectives</h1>
+        <h1>Sentences</h1>
         <div id="wrapper">
             <div id="wordSelect">
             </div>
             <div id="workingArea">
-                <h2 id="lblWord"></h2>
+                <h2 id="lblSentence"></h2>
                 <span id="lblDescription"></span>
                 <div class="answer"><input type="text" id="txtAnswer" onkeydown="answerKeyDown(event);" /></div>
             </div>
             <div id="controls">
                 <div>
-                    <label class="switch">
-                        <input type="checkbox" id="chkSpanish" onclick="swapLanguage();">
-                        <span class="slider round"></span>
-                    </label>
-                    <span>Spanish to english</span>
+                    <!--<label class="switch">
+        <input type="checkbox" id="chkSpanish" onclick="swapLanguage();">
+        <span class="slider round"></span>
+    </label>
+    <span>Spanish to english</span>-->
                 </div>
                 <div>
                     <input type="submit" value="Check" onClick="check();" />
@@ -60,7 +60,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        initialiseWords(data);
+        initialise(data);
     </script>
 </body>
 </html>
