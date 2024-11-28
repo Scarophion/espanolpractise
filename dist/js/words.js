@@ -2,6 +2,7 @@ var words = undefined;
 var myAnswer; 
 var spanishToEnglish;
 var lblWord;
+var lblDescription;
 
 function initialiseWords(data) {
 	createCheckBoxes(data);
@@ -9,6 +10,7 @@ function initialiseWords(data) {
 	myAnswer = document.getElementById("txtAnswer");
 	spanishToEnglish = document.getElementById("chkSpanish");
 	lblWord = document.getElementById("lblWord");
+	lblDescription = document.getElementById("lblDescription");
 	next();
 };
 
@@ -87,6 +89,7 @@ function next() {
 		}
 		else {
 			lblWord.innerHTML = thisWord.english;
+			lblDescription.innerHTML = thisWord.enDesc == undefined ? "" : thisWord.enDesc;
 		}
 	}
 }

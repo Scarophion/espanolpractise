@@ -29,11 +29,13 @@ const data =
                 },
                 {
                     "espanol": "bajo",
-                    "english": "low"
+                    "english": "low",
+                    "enDesc": "& a person's height."
                 },
                 {
                     "espanol": "bajísimo",
-                    "english": "very low"
+                    "english": "very low",
+                    "enDesc": "& a person's height."
                 },
                 {
                     "espanol": "lindo",
@@ -77,11 +79,13 @@ const data =
                 },
                 {
                     "espanol": "hermoso",
-                    "english": "beautiful"
+                    "english": "beautiful",
+                    "enDesc": "For a person"
                 },
                 {
                     "espanol": "hermosísimo",
-                    "english": "very beautiful"
+                    "english": "very beautiful",
+                    "enDesc": "For a person"
                 },
                 {
                     "espanol": "horrible",
@@ -117,11 +121,13 @@ const data =
                 },
                 {
                     "espanol": "corto",
-                    "english": "short"
+                    "english": "short",
+                    "enDesc": "length e.g. clothes."
                 },
                 {
                     "espanol": "cortísimo",
-                    "english": "very short"
+                    "english": "very short",
+                    "enDesc": "length e.g. clothes."
                 },
                 {
                     "espanol": "salado",
@@ -370,11 +376,13 @@ const data =
                 },
                 {
                     "espanol": "bello",
-                    "english": "beautiful"
+                    "english": "beautiful",
+                    "enDesc": "General: Person, pet, landscape, poem."
                 },
                 {
                     "espanol": "bellísimo",
-                    "english": "very beautiful"
+                    "english": "very beautiful",
+                    "enDesc": "General: Person, pet, landscape, poem."
                 },
                 {
                     "espanol": "feo",
