@@ -2,17 +2,18 @@ body {
     font-size: 2em;
 }
 
-#header{
-    display:flex;
+#header {
+    display: flex;
     padding: 0.25em;
 }
 
-#logo{
-    flex-grow:1;
-    h1{
-          margin: 0;
-      }
+#logo {
+    flex-grow: 1;
 }
+
+    #logo h1 {
+        margin: 0;
+    }
 
 #menu .menu-icon {
     height: 40px;
@@ -31,14 +32,14 @@ body {
     color: #004b8d;
 }
 
-#navigation{
-    display:none;
+#navigation {
+    display: none;
 }
 
-#menu.show #navigation{
-    display:block;
-    position:absolute;
-    right:20px;
+#menu.show #navigation {
+    display: block;
+    position: absolute;
+    right: 20px;
 }
 
 #controls {
@@ -50,63 +51,23 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    .answer
-    {
-        display: flex;
-        input[type=text]
-
-        {
-            text-align: center;
-            width: 100%;
-        }
-    }
 }
 
-.tableContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.tenseBlock {
-    border-right: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.header.term {
-    font-weight: bold;
-    text-align: center;
+#wrapper{
     width: 100%;
 }
 
-.cell.subject {
-    flex-shrink: 0;
-    font-weight: bold;
-    width: 25%;
-}
-
-.cell {
-    padding: 2px;
-}
-
-.column.conj {
-    border-bottom: 1px solid black;
+#characters {
     display: flex;
     flex-direction: row;
-    min-height: 1.4em;
-}
-
-.cell.answer {
-    flex-grow: 1;
+    justify-content: center;
 }
 
 .answer input[type=text] {
     height: 2.5em;
-    width: 50%;
-    font-size: 1em;
-    text-transform: lowercase;
+    text-align: center;
+/*    width: 100%;*/
+    padding: 0 0.25em;
 }
 
 input[type=submit] {
@@ -118,39 +79,13 @@ input[type=submit] {
         font-size: 1.5em;
     }
 
-    .tableContainer {
-        flex-direction: row;
+    .answer input[type=text] {
+        font-size: 1em;
     }
-
-    .verbTable {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .tenseBlock:not(:first-child) {
-        .cell.subject
-
-{
-    display: none;
 }
+/*@media screen and (min-width: 1025px)*/
 
-}
-
-.cell.subject {
-    width: 50%;
-}
-
-.cell.answer input[type=text] {
-    font-size: revert-layer;
-    height: 1.5em;
-}
-
-input[type=submit] {
-    font-size: 0.8em;
-}
-
-}
-
+/* Right/wrong */
 .answer.correct input,
 .answer.correct span {
     color: green;
@@ -173,10 +108,4 @@ input[type=submit] {
 
 .hidden {
     display: none;
-}
-
-#characters {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }

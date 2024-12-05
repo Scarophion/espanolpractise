@@ -1,0 +1,75 @@
+#verbTable {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+    .tableContainer .tenseBlock {
+        border-right: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .tableContainer .header.term {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tableContainer .cell {
+        padding: 2px;
+    }
+
+        .tableContainer .cell.subject {
+            flex-shrink: 0;
+            font-weight: bold;
+            min-width: 25%;
+        }
+
+    .tableContainer .column.conj {
+        border-bottom: 1px solid black;
+        min-height: 1.4em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tableContainer .cell.answer input[type=text] {
+        font-size: 1em;
+        text-transform: lowercase;
+        width: auto;
+    }
+
+@media screen and (min-width: 1025px) {
+    .tableContainer {
+        flex-direction: row;
+    }
+
+    .verbTable {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tableContainer .tenseBlock:not(:first-child) .column.conj {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tableContainer .tenseBlock:not(:first-child) .cell.subject {
+        display: none;
+    }
+
+    .tableContainer .cell.answer input[type=text] {
+        font-size: revert-layer;
+        height: 1.5em;
+    }
+
+    .tableContainer input[type=submit] {
+        font-size: 0.8em;
+    }
+}
+/*@media screen and (min-width: 1025px)*/
