@@ -17,7 +17,7 @@ function initialiseWords(data) {
 function createCheckBoxes(data) {
 	var chkDiv = document.getElementById("wordSelect");
 	data.forEach((collection) => {
-		var chkBox = '<input type="checkbox" id="chk' + collection.name + '" value="' + collection.name + '" checked onclick="setWords(data);" /><label for="chk' + collection.name + '">' + collection.name + '</span>';
+		var chkBox = '<div><input type="checkbox" id="chk' + collection.name + '" value="' + collection.name + '" checked onclick="setWords(data);" /><label for="chk' + collection.name + '">' + collection.name + '</span></div>';
 		chkDiv.innerHTML += chkBox;
 	});
 };
