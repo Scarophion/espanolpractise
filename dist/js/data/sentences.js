@@ -250,7 +250,7 @@
                                 },
                                 {
                                     "english": "in an office",
-                                    "espanol": "en el oficina"
+                                    "espanol": "en una oficina"
                                 }
                             ]
                         },

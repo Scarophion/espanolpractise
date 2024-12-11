@@ -1,20 +1,17 @@
-//var spanishToEnglish;
-//var lblSentence;
-//var lblDescription;
-var subjects, regConj, verbGroups;
+var spanishToEnglish;
+var lblSentence;
+var regConj, verbGroups;
 var question, answer, myAnswer, selectedVerbs;
 
 function initialise(data) {
-	//subjects = data.subjects;
 	regConj = data.regConj;
 	verbGroups = data.verbGroups;
 	createCheckBoxes(data.verbGroups);
 	setVerbs(data.verbGroups);
 
 	myAnswer = document.getElementById("txtAnswer");
-	//spanishToEnglish = document.getElementById("chkSpanish");
-	//lblSentence = document.getElementById("lblSentence");
-	//lblDescription = document.getElementById("lblDescription");
+	spanishToEnglish = document.getElementById("chkSpanish");
+	lblSentence = document.getElementById("lblSentence");
 
 	next();
 };
@@ -22,7 +19,7 @@ function initialise(data) {
 function createCheckBoxes(data) {
 	var chkDiv = document.getElementById("wordSelect");
 	data.forEach((collection) => {
-		var chkBox = '<input type="checkbox" id="chk' + collection.name + '" value="' + collection.name + '" checked onclick="setVerbs(verbGroups);" /><label for="chk' + collection.name + '">' + collection.name + '</span>';
+		var chkBox = '<input type="checkbox" id="chk' + collection.name + '" value="' + collection.name + '" checked disabled onclick="setVerbs(verbGroups);" /><label for="chk' + collection.name + '">' + collection.name + '</span>';
 		chkDiv.innerHTML += chkBox;
 	});
 };
@@ -52,26 +49,25 @@ function setVerbs(verbGroups) {
 }
 
 function check() {
-	//if (myAnswer.value === "") {
-	//	myAnswer.parentElement.classList.remove("correct");
-	//	myAnswer.parentElement.classList.remove("wrong");
-	//} else {
-	//	myAnswer.value = myAnswer.value.toLowerCase(); // for mobile capitalisation
-	//	if (myAnswer.value.localeCompare(getAnswer()) == 0) {
-	//		myAnswer.parentElement.classList.add("correct");
-	//		myAnswer.parentElement.classList.remove("wrong");
-	//	} else {
-	//		myAnswer.parentElement.classList.remove("correct");
-	//		myAnswer.parentElement.classList.add("wrong");
-	//	}
-	//}
+	if (myAnswer.value === "") {
+		myAnswer.parentElement.classList.remove("correct");
+		myAnswer.parentElement.classList.remove("wrong");
+	} else {
+		if (myAnswer.value.toLowerCase().localeCompare(getAnswer().toLowerCase()) == 0) {
+			myAnswer.parentElement.classList.add("correct");
+			myAnswer.parentElement.classList.remove("wrong");
+		} else {
+			myAnswer.parentElement.classList.remove("correct");
+			myAnswer.parentElement.classList.add("wrong");
+		}
+	}
 }
 
 function reveal() {
-	//check();
-	//myAnswer.parentElement.classList.remove("correct");
-	//myAnswer.parentElement.classList.remove("wrong");
-	//myAnswer.value = getAnswer();
+	check();
+	myAnswer.parentElement.classList.remove("correct");
+	myAnswer.parentElement.classList.remove("wrong");
+	myAnswer.value = getAnswer();
 }
 
 function next() {
@@ -87,22 +83,22 @@ function next() {
 		myAnswer.parentElement.classList.remove("wrong");
 
 		// Generate english and spanish answers
-		var newSentence = generateSentence(thisVerb); //{ "english": "", "spanish": "" };
+		var newSentence = generateSentence(thisVerb);
 
 		// Set in DOM
 		myAnswer.dataset.english = newSentence.english;
 		myAnswer.dataset.espanol = newSentence.espanol;
 
+		lblSentence.innerHTML = spanishToEnglish.checked ? newSentence.espanol : newSentence.english;
 		myAnswer.focus();
 
-		//if (spanishToEnglish.checked) {
-		//	lblSentence.innerHTML = newSentence.espanol;
-		//}
-		//else {
-		lblSentence.innerHTML = newSentence.english;
-		myAnswer.value = newSentence.espanol;
-		//	lblDescription.innerHTML = newSentence.enDesc == undefined ? "" : newSentence.enDesc;
-		//}
+		// Text box width
+		var width = '25ch';
+		var senLength = newSentence.espanol > newSentence.english ? newSentence.espanol.length : newSentence.english.length;
+		if (senLength > 25) {
+			width = lblSentence.innerHTML.length + 'ch';
+		}
+		myAnswer.style["width"] = width;
 	}
 }
 
@@ -151,20 +147,23 @@ function insert(character) {
 }
 
 function swapLanguage() {
-	//myAnswer.value = "";
-	//myAnswer.parentElement.classList.remove("correct");
-	//myAnswer.parentElement.classList.remove("wrong");
+	myAnswer.value = "";
+	myAnswer.parentElement.classList.remove("correct");
+	myAnswer.parentElement.classList.remove("wrong");
 
-	//if (spanishToEnglish.checked) {
-	//	lblSentence.innerHTML = myAnswer.dataset.espanol;
-	//}
-	//else {
-	//	lblSentence.innerHTML = myAnswer.dataset.english;
-	//}
+	lblSentence.innerHTML = spanishToEnglish.checked ? myAnswer.dataset.espanol : myAnswer.dataset.english;
+
+	// Text box width
+	var width = '25ch';
+	var senLength = myAnswer.dataset.espanol > myAnswer.dataset.english ? myAnswer.dataset.espanol.length : myAnswer.dataset.english.length;
+	if (senLength > 25) {
+		width = lblSentence.innerHTML.length + 'ch';
+	}
+	myAnswer.style["width"] = width;
 }
 
 function getAnswer() {
-	//return spanishToEnglish.checked ? myAnswer.dataset.english : myAnswer.dataset.espanol;
+	return spanishToEnglish.checked ? myAnswer.dataset.english : myAnswer.dataset.espanol;
 }
 
 function answerKeyDown(event) {
