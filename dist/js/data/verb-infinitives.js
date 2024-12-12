@@ -5,15 +5,18 @@ const data =
             "words": [
                 {
                     "espanol": "ser",
-                    "english": "to be"
+                    "english": "to be",
+                    "enDesc": "a permanent quality or state."
                 },
                 {
                     "espanol": "estar",
-                    "english": "to be"
+                    "english": "to be",
+                    "enDesc": "a temporary condition."
                 },
                 {
                     "espanol": "tener",
-                    "english": "to have"
+                    "english": "to have",
+                    "enDesc": "posession or state of being."
                 },
                 {
                     "espanol": "hacer",
@@ -81,7 +84,8 @@ const data =
                 },
                 {
                     "espanol": "comprender",
-                    "english": "to understand"
+                    "english": "to understand",
+                    "enDesc": "an understanding, a deeper knowledge."
                 },
                 {
                     "espanol": "conducir",
@@ -89,7 +93,8 @@ const data =
                 },
                 {
                     "espanol": "conocer",
-                    "english": "to know"
+                    "english": "to know",
+                    "enDesc": "to be familiar with."
                 },
                 {
                     "espanol": "creer",
@@ -125,7 +130,8 @@ const data =
                 },
                 {
                     "espanol": "entender",
-                    "english": "to understand"
+                    "english": "to understand",
+                    "enDesc": "an idea."
                 },
                 {
                     "espanol": "escribir",
@@ -153,7 +159,8 @@ const data =
                 },
                 {
                     "espanol": "haber",
-                    "english": "to have"
+                    "english": "to have",
+                    "enDesc": "auxillary verb."
                 },
                 {
                     "espanol": "hablar",
@@ -237,7 +244,8 @@ const data =
                 },
                 {
                     "espanol": "saber",
-                    "english": "to know"
+                    "english": "to know",
+                    "enDesc": "information and factual knowledge."
                 },
                 {
                     "espanol": "salir",
